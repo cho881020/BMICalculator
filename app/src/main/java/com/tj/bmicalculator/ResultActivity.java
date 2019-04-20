@@ -1,18 +1,20 @@
 package com.tj.bmicalculator;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.tj.bmicalculator.databinding.ActivityResultBinding;
+
 public class ResultActivity extends AppCompatActivity {
 
-    private android.widget.TextView bmiResultTxt;
-    private android.widget.TextView bmiCalculateTxt;
+    ActivityResultBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+
         bindViews();
         setupEvents();
         setValues();
@@ -35,31 +37,30 @@ public class ResultActivity extends AppCompatActivity {
 
 //        계산된 BMI값을 출력
 
-        bmiCalculateTxt.setText(String.format("%f 입니다.", BMI));
+        binding.bmiCalculateTxt.setText(String.format("%f 입니다.", BMI));
 
 //        계산된 BMI값을 토대로 비만 여부 판정
         if (BMI < 18.5) {
-            bmiResultTxt.setText("저체중");
+            binding.bmiResultTxt.setText("저체중");
         }
         else if (BMI < 23) {
-            bmiResultTxt.setText("정상");
+            binding.bmiResultTxt.setText("정상");
         }
         else if (BMI < 25) {
-            bmiResultTxt.setText("과체중");
+            binding.bmiResultTxt.setText("과체중");
         }
         else if (BMI < 30) {
-            bmiResultTxt.setText("비만");
+            binding.bmiResultTxt.setText("비만");
         }
         else {
-            bmiResultTxt.setText("고도비만");
+            binding.bmiResultTxt.setText("고도비만");
         }
 
 
     }
 
     void bindViews() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_result);
 
-        this.bmiCalculateTxt = (TextView) findViewById(R.id.bmiCalculateTxt);
-        this.bmiResultTxt = (TextView) findViewById(R.id.bmiResultTxt);
     }
 }

@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#EFEFEF"
-    android:gravity="center"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/bmiResultTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="경도비만"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="당신의 BMI 지수는"/>
+        <TextView
+            android:id="@+id/bmiResultTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경도비만"
+            android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/bmiCalculateTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="25 입니다."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="당신의 BMI 지수는"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/bmiCalculateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 입니다."
+            android:textSize="30sp" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
